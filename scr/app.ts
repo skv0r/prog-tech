@@ -87,6 +87,11 @@ class UserPresenter {
         const name = this.nameInput.value.trim();
         const age = Number(this.ageInput.value);
         const status = this.statusInput.value as "active" | "blocked";
+
+        if (age < 1) {
+            alert("Возраст должен быть не менее 1 года.");
+            return;
+        }
     
         const editingId = this.form.dataset.editing;
     
